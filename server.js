@@ -9,7 +9,7 @@ require('dotenv').config();
 
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT;
 
 // Riot API Key (keep this private)
 const RIOT_API_KEY = process.env.RIOT_API_KEY;
@@ -120,5 +120,5 @@ app.post("/api/ai", async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running at http://localhost:${PORT}`);
+  console.log(`Server running at ${PORT}`);
 });

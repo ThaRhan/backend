@@ -9,11 +9,12 @@ require('dotenv').config();
 
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 // Riot API Key (keep this private)
 const RIOT_API_KEY = process.env.RIOT_API_KEY;
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const REACT_APP_URL = process.env.REACT_APP_URL;
 
 // Make sure to include these imports:
 // import { GoogleGenerativeAI } from "@google/generative-ai";
@@ -53,7 +54,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 app.use(cors({
-  origin: 'https://client-kk4g.onrender.com', // Make sure this matches your React app's port
+  origin: REACT_APP_URL, // Make sure this matches your React app's port
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));

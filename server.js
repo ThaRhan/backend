@@ -1,6 +1,5 @@
 const express = require("express");
 const axios = require("axios");
-const path = require("path");
 const cors = require("cors");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -49,10 +48,6 @@ const summonerData = [
 ];
 
 // Middleware
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
 app.use(cors({
   origin: REACT_APP_URL, // Make sure this matches your React app's port
   methods: ['GET', 'POST'],

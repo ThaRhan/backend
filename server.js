@@ -120,5 +120,5 @@ app.post("/api/ai", async (req, res) => {
 
 // Start the server
 app.listen(PORT, () => {
-  console.log(`Server running at ${PORT}`);
+  console.log(`Server running at http:/localhost:${PORT}`);
 });

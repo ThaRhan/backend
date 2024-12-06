@@ -53,7 +53,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
 app.use(cors({
-  origin: '*', // Make sure this matches your React app's port
+  origin: 'https://client-kk4g.onrender.com', // Make sure this matches your React app's port
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type', 'Authorization']
 }));
